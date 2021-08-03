@@ -114,6 +114,23 @@ router.put(
   }
 );
 
+router.put(
+  "/modificarNota/:id",
+  async (req, res) => {
+    try 
+    {
+      const { id } = req.params;
+      const { titulo, descripcion, palabrasClave } = req.body;
+      let resultado = await modificarNota(id, titulo, descripcion, palabrasClave);
+      res.status(200).json(resultado);
+    } 
+    catch (ex) 
+    {
+      res.status(500).json({ "msg": "Error" });
+    }
+  }
+);
+
 router.delete(
   "/eliminar/:id",
   async (req, res) => {

@@ -20,6 +20,7 @@ import Registate from './components/public/Registrate';
 import MisNotas from './components/private/Notas';
 import MiNota from './components/private/MiNota';
 import AddNota from './components/private/AddNota';
+import modificarNota from './components/private/ModificarNota';
 import Perfil from './components/private/Perfil';
 
 import './App.css';
@@ -38,6 +39,7 @@ function App() {
                   <PrivateRoute exact path="/misNotas" component={MisNotas}></PrivateRoute>
                   <PrivateRoute exact path="/miNota" component={MiNota}></PrivateRoute>
                   <PrivateRoute exact path="/addNota" component={AddNota}></PrivateRoute>
+                  <PrivateRoute exact path="/modificarNota" component={modificarNota}></PrivateRoute>
                   <PrivateRoute exact path="/perfil" component={Perfil}></PrivateRoute>
               </Switch>
               <Menu login={false}></Menu>
