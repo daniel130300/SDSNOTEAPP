@@ -11,31 +11,33 @@ const ModificarNota = ()=> {
     const routeHistory = useHistory();
     let { from } = { from : {pathname:"/misNotas"}};
     const [{ nota }, dispatch ] = useSession();
-  
-    const cargarNota = async ()=>{
-        if (nota.idActual && true) {
-            const { data } = await privateaxios.get(`/api/notas/porId/${nota.idActual}`);
-            console.log(data);
-            dispatch({type:NOTA_CURRENT_LOAD, payload:data});
-        }
-    }
-
-    const { notaActual } = nota;
-
-    useEffect(()=>{
-        cargarNota();
-        setValoresFormulario({
-            titulo: notaActual.titulo,
-            descripcion: notaActual.descripcion,
-            palabrasClave: notaActual.palabrasClave.toString()
-        });
-    }, []);
+    let notaActual = null;
 
     const [valoresFormulario, setValoresFormulario] = useState({
         titulo: "",
         descripcion: "",
         palabrasClave: ""
     });
+
+    useEffect(
+        async ()=>{
+            if (nota.idActual && true) {
+                const { data } = await privateaxios.get(`/api/notas/porId/${nota.idActual}`);
+                console.log(data);
+                dispatch({type:NOTA_CURRENT_LOAD, payload:data});
+                notaActual = data;
+            }
+            console.log(notaActual);
+            setValoresFormulario({ ...valoresFormulario,
+                titulo: notaActual.titulo,
+                descripcion: notaActual.descripcion,
+                palabrasClave: notaActual.palabrasClave.toString()
+            });
+        }
+        //notaActual = nota.notaActual;
+    ,
+    []
+    );
 
     const submitHandler = async (e) =>{
         e.preventDefault();
