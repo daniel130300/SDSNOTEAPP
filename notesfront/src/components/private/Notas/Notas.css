@@ -2,7 +2,7 @@
 {
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
@@ -86,4 +86,23 @@
 {
   background-color: #D32F2F;
   margin-left: 1rem;
+}
+
+.contenedorPalabras
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.palabraClave {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  color:#fff;
+  background-color: #2b7a59;
+  box-shadow: 1px 1px 5px #333;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }

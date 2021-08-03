@@ -65,6 +65,18 @@ const Notas = () => {
     return (<Redirect to="/modificarNota"></Redirect>);
   }
 
+  const formatearTexto = (texto) => {
+    
+    let str = texto;
+    
+    if(texto.length>15)
+    {
+      str = texto.substring(0, 14) + "..."; 
+    }
+
+    return str;
+  }
+
   const formatearFecha = (fecha)=>{
     let nuevaFecha = new Date(fecha);
     nuevaFecha = nuevaFecha.toLocaleDateString();
@@ -74,7 +86,7 @@ const Notas = () => {
   const listadoNotas = nota.notas.map((o,i)=>{
     return (
       <li key={o._id + i} className="card">
-        <div class="icons">
+        <div className="icons">
           <span className="viewIcon" onClick={()=>redirect(o._id)}><MdRemoveRedEye/></span>
           <span className="editIcon" onClick={()=>editarNota(o._id)}><MdEdit/></span>
           <span className="deleteIcon" onClick={()=>eliminarNota(o._id)}><MdDelete/></span>
@@ -82,9 +94,11 @@ const Notas = () => {
         <h2>Titulo</h2>
         <p>{o.titulo}</p>
         <h2>Descripción</h2>
-        <p>{o.descripcion}</p>
+        <p>{o.descripcion=formatearTexto(o.descripcion)}</p>
         <h2>Palabras Clave</h2>
-        <p>{o.palabrasClave}</p>
+        <ul className="contenedorPalabrasClave">
+          {o.palabrasClave.map((o,i)=>{return(<ul key={i} className="contenedorPalabras"><li className="palabraClave">{o}</li></ul>);})}
+        </ul>
         <h2>Fecha de Creación</h2> 
         <p>{o.fechaCreacion=formatearFecha(o.fechaCreacion)}</p>
       </li>
