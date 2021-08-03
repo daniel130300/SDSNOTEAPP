@@ -62,7 +62,7 @@ const Notas = () => {
 
   if (nota.redireccionarEditar) 
   {
-    return (<Redirect to="/perfil"></Redirect>);
+    return (<Redirect to="/modificarNota"></Redirect>);
   }
 
   const formatearFecha = (fecha)=>{
