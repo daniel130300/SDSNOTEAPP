@@ -16,3 +16,10 @@ fieldset input{
   padding:0.5rem 1rem;
   font-size:1rem;
 }
+
+textarea{
+  border: 1px solid #333;
+  padding:0.5rem 1rem;
+  font-size:1rem;
+}
+

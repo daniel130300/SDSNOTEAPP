@@ -1,12 +1,14 @@
 .SplashScreen{
-  width:100vw;
-  height:calc(100vh - 43.5px);
+  height: 100vh;
   display:flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(26, 26, 26);
 }
 
 .SplashScreen h1{
   margin:0;
   padding:0;
+  color: white;
 }
+

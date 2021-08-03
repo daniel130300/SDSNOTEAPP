@@ -1,0 +1,10 @@
+input[type=text]
+{
+    border-radius: 500px;
+}
+
+textarea {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 20px;
+}

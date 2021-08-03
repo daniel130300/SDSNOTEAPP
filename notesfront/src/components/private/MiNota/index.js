@@ -46,19 +46,7 @@ const MiNota = () => {
     nuevaFecha = nuevaFecha.toLocaleDateString();
     return nuevaFecha;
   }
-
-  /*
-  const comments = notaActual.comments.map((o,i)=>{
-    return (
-      <section key={i} className="comment">
-        <div>
-          <div>{o.email}</div>
-          <div>{new Date(o.date).toLocaleDateString()}</div>
-        </div>
-        <div>{o.comment}</div>
-      </section>);
-  });
-  */
+  
   return (
     <Page title="Nota" showHeader>
       <h2>Titulo</h2>

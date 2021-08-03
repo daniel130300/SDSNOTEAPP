@@ -43,7 +43,7 @@ const AddNota = ()=> {
   }
   
   return (
-    <Page showHeader title="Nuevo">
+    <Page showHeader title="Nueva Nota">
       <section>
         <Field
           name="titulo"
@@ -55,6 +55,7 @@ const AddNota = ()=> {
           onChange={onChangeHandler}
         >
         </Field>
+        <br/>
         <Field
           name="descripcion"
           id="descripcion"
@@ -67,6 +68,7 @@ const AddNota = ()=> {
           style={{minHeight:"40vh"}}
         >
         </Field>
+        <br/>
         <Field
           name="palabrasClave"
           id="palabrasClave"
@@ -77,9 +79,8 @@ const AddNota = ()=> {
           onChange={onChangeHandler}
         >
         </Field>
-      </section>
-      <section style={{padding:"1rem"}}>
-          <Button onClick={submitHandler}>Agregar Nota</Button>
+        <br/>
+        <Button onClick={submitHandler}>Agregar Nota</Button>
         </section>
     </Page>
     );
